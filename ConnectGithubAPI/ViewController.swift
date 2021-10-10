@@ -12,6 +12,8 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        getJSON(completionHandler: myCompletionHandler)
+
     }
 
     @IBAction func ToTableView(_ sender: Any) {
