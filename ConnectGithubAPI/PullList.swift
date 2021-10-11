@@ -11,4 +11,5 @@ class PullList: Codable {
     //var title: String = ""
     var title: String
     var body: String
+    var number: Int
 }

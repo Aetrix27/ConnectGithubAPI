@@ -33,6 +33,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 newViewBody += item + "\n"
             }
             destination.selectedPullRequest = newViewBody
+            newViewBody = ""
 
         }
     }
@@ -55,7 +56,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let row = indexPath.row
-        cell.textLabel?.text = "\(String(describing: pullRequestInfo[indexPath.row]["title"]))"
+        cell.textLabel?.text = "\((pullRequestInfo[indexPath.row]["title"])!)"
         
         return cell
     }

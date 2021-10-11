@@ -13,16 +13,12 @@ var pullRequestInfo = [Dictionary<String, String>]()
 var noMoreElems : Bool = false
 var pullRequestNum = 1
 
-func getJSON() {
+func getJSON(completionHandler: @escaping ([[String: Any]]) -> Void) {
         // Enter your response here
-    let myCompletionHandler: ([[String: Any]]) -> Void = {finished in
-            print("We have completed function)")
-        
-    }
-
+    //for item in 0...pullRequestNum{
         var session = URLSession.shared
         // /repos/aetrix27/ConnectGithubAPI/pulls
-        var baseURL = "https://api.github.com/repos/Aetrix27/ConnectGithubAPI/pulls/\(pullRequestNum)"
+        var baseURL = "https://api.github.com/repos/Aetrix27/ConnectGithubAPI/pulls"
         var url = URL(string: baseURL)!
         var request = URLRequest(url: url)
         
@@ -40,7 +36,6 @@ func getJSON() {
 
             guard httpResponse.statusCode == 200 else {
                 print("Status code not OK")
-                var noMoreElems = true
                 return
             }
 
@@ -58,42 +53,50 @@ func getJSON() {
             //receiving models
             // pull request array,
             //user, title, body keys and set up token
-            do{
-                let product = try JSONDecoder().decode(PullList.self, from: data)
-            
-                pullRequestInfo.append(["id":String(product.id),"body":product.body, "title":product.title])
-            } catch{
-                print(error)
-            }
-            
-            //JSONEncoder().encode(photos)
-
-            //sends models
-            //JSONEncoder().encode(photos)
-
             // Don't forget to notify the caller here
             guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] else {
                 print("Failed to convert data into array of dictionaries")
                
                 return
             }
-            
+            pullRequestNum = (json[0]["number"]! as? Int)!
+            for item in 0...pullRequestNum-1 {
+                var cur_id: String = String(format: "%@", json[item]["id"] as! CVarArg)
+                var body: String = json[item]["body"] as! String
+                var title: String = json[item]["title"] as! String
+                //var token: String = json[item]["temp_clone_token"] as! String
+
+                pullRequestInfo.append(["title":title,"id":cur_id,"body":body])
+            }
+
             for item in json {
                    if let size = item["Pull request"] as? [String:Any] {
                     print(size["Pull request"]!)
                    }
                }
+            /*
+            do{
+                let product = try JSONDecoder().decode(PullList.self, from: json[0])
+             
+                for item in 0...pullRequestNum {
+                    pullRequestInfo.append(["id":String(item.id),"body":item.body, "title":item.title])
+                }
+                
+            } catch{
+                print(error)
+            }
+            */
      
-            myCompletionHandler(json)
+            completionHandler(json)
 
         }.resume()
+    //}
+    
+}
     
 
 
-        pullRequestNum += 1
-        print(pullRequestNum)
+let myCompletionHandler: ([[String: Any]]) -> Void = {finished in
+        print("We have completed function)")
     
-    }
-    
-
-
+}
