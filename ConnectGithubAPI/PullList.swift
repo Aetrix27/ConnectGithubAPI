@@ -6,10 +6,17 @@
 //
 
 class PullList: Codable {
-    //var user: Dictionary<String, Dictionary<String, String>>
-    var id: Int
-    //var title: String = ""
+    var id : String
     var title: String
     var body: String
-    var number: Int
+    init(id: String, //👈
+           title: String,
+           body: String) {
+          
+        self.id = id
+        self.title = title
+        self.body = body
+      }
+    //var user: Dictionary<String, Dictionary<String, String>>
+   
 }

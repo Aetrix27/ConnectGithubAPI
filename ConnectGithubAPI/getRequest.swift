@@ -64,9 +64,10 @@ func getJSON(completionHandler: @escaping ([[String: Any]]) -> Void) {
                 var cur_id: String = String(format: "%@", json[item]["id"] as! CVarArg)
                 var body: String = json[item]["body"] as! String
                 var title: String = json[item]["title"] as! String
+                var newPull = PullList(id: cur_id,title: title,body: body)
                 //var token: String = json[item]["temp_clone_token"] as! String
 
-                pullRequestInfo.append(["title":title,"id":cur_id,"body":body])
+                pullRequestInfo.append(["title":newPull.title,"id":newPull.id,"body":newPull.body])
             }
 
             for item in json {

@@ -45,19 +45,11 @@
                                     <action selector="ToTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZiV-XC-khF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuJ-e1-XfA">
-                                <rect key="frame" x="15" y="237" width="384" height="30"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                <state key="normal" title="Make a Pull Request"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mkI-HA-Z6k" secondAttribute="trailing" constant="15" id="5hi-Hu-mIg"/>
-                            <constraint firstItem="JuJ-e1-XfA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="GAB-kv-9rX"/>
-                            <constraint firstItem="JuJ-e1-XfA" firstAttribute="top" secondItem="mkI-HA-Z6k" secondAttribute="bottom" constant="32" id="RzU-E8-qIm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JuJ-e1-XfA" secondAttribute="trailing" constant="15" id="cnw-sV-wYD"/>
                             <constraint firstItem="FnH-GV-RTs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g09-3P-GjA"/>
                             <constraint firstItem="FnH-GV-RTs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kXb-vh-9WA"/>
                             <constraint firstItem="mkI-HA-Z6k" firstAttribute="top" secondItem="FnH-GV-RTs" secondAttribute="bottom" constant="24" id="lZl-CY-H6e"/>
