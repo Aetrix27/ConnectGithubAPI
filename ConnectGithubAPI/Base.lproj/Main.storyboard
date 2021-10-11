@@ -126,8 +126,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOx-sy-eeW">
-                                <rect key="frame" x="186" y="269" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOx-sy-eeW">
+                                <rect key="frame" x="20" y="20" width="280" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -135,11 +136,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wrs-YC-cU0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="xOx-sy-eeW" firstAttribute="top" secondItem="Wrs-YC-cU0" secondAttribute="top" constant="25" id="Bxp-Ib-U0O"/>
-                            <constraint firstItem="xOx-sy-eeW" firstAttribute="leading" secondItem="Wrs-YC-cU0" secondAttribute="leading" constant="15" id="Kji-6V-LvG"/>
-                            <constraint firstItem="Wrs-YC-cU0" firstAttribute="trailing" secondItem="xOx-sy-eeW" secondAttribute="trailing" constant="15" id="yoj-do-EPf"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VpG-dg-u28"/>
                     <connections>
@@ -148,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfd-jg-Xk0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2620" y="102"/>
+            <point key="canvasLocation" x="2618.840579710145" y="101.78571428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XlX-k9-1dC">

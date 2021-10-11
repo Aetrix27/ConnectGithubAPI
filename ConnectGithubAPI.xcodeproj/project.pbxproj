@@ -15,7 +15,7 @@
 		016E74572700246100565B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016E74552700246100565B54 /* LaunchScreen.storyboard */; };
 		016E745F27018B6700565B54 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016E745E27018B6700565B54 /* TableViewController.swift */; };
 		016E7461270256AA00565B54 /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016E7460270256AA00565B54 /* CellViewController.swift */; };
-		017C6D832706781100BED3B8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017C6D822706781100BED3B8 /* Post.swift */; };
+		017241E327141241002216C7 /* PullList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017241E227141241002216C7 /* PullList.swift */; };
 		017C6D852709625700BED3B8 /* getRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017C6D842709625700BED3B8 /* getRequest.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		016E74582700246100565B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		016E745E27018B6700565B54 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		016E7460270256AA00565B54 /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
-		017C6D822706781100BED3B8 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		017241E227141241002216C7 /* PullList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullList.swift; sourceTree = "<group>"; };
 		017C6D842709625700BED3B8 /* getRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,7 +73,7 @@
 				016E74532700246100565B54 /* Assets.xcassets */,
 				016E74552700246100565B54 /* LaunchScreen.storyboard */,
 				016E74582700246100565B54 /* Info.plist */,
-				017C6D822706781100BED3B8 /* Post.swift */,
+				017241E227141241002216C7 /* PullList.swift */,
 				017C6D842709625700BED3B8 /* getRequest.swift */,
 			);
 			path = ConnectGithubAPI;
@@ -151,8 +151,8 @@
 			files = (
 				016E7461270256AA00565B54 /* CellViewController.swift in Sources */,
 				016E744F2700245700565B54 /* ViewController.swift in Sources */,
+				017241E327141241002216C7 /* PullList.swift in Sources */,
 				016E744B2700245700565B54 /* AppDelegate.swift in Sources */,
-				017C6D832706781100BED3B8 /* Post.swift in Sources */,
 				017C6D852709625700BED3B8 /* getRequest.swift in Sources */,
 				016E744D2700245700565B54 /* SceneDelegate.swift in Sources */,
 				016E745F27018B6700565B54 /* TableViewController.swift in Sources */,

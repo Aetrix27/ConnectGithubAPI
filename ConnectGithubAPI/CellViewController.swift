@@ -16,7 +16,11 @@ class CellViewController: UIViewController {
     var selectedPullRequest : String?
     
     override func viewWillAppear(_ animated: Bool) {
+        selectedPullRequestLabel.numberOfLines = 0
+        selectedPullRequestLabel.lineBreakMode = .byWordWrapping
         selectedPullRequestLabel.text = selectedPullRequest
+        selectedPullRequestLabel.frame.size.width = 300
+        selectedPullRequestLabel.sizeToFit()
     }
      
      // this is a convenient way to create this view controller without a imageURL

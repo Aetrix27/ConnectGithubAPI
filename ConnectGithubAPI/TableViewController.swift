@@ -30,7 +30,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let pullRequestIndex = table.indexPathForSelectedRow?.row
         {
             for item in pullRequestInfo[pullRequestIndex].values{
-                newViewBody += item
+                newViewBody += item + "\n"
             }
             destination.selectedPullRequest = newViewBody
 
