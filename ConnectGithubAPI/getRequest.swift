@@ -7,18 +7,20 @@
 
 
 import Foundation
-class PullList: Codable {
-    var user: String
-    var title: String
-    var body: String?
-}
+
 
 func getJSON(completionHandler: @escaping ([[String: Any]]) -> Void) {
-
+    class PullList: Codable {
+        //var user: Dictionary<String, Dictionary<String, String>>
+        var id: Int?
+        //var title: String = ""
+        var body: String?
+    }
     // Enter your response here
     let session = URLSession.shared
     // /repos/aetrix27/ConnectGithubAPI/pulls
-    let baseURL = "https://api.github.com//repos/Aetrix27/ConnectGithubAPI/pulls/0"
+    var pullRequestNum = 1
+    let baseURL = "https://api.github.com/repos/Aetrix27/ConnectGithubAPI/pulls/\(pullRequestNum)"
     let url = URL(string: baseURL)!
     let request = URLRequest(url: url)
     
@@ -57,8 +59,8 @@ func getJSON(completionHandler: @escaping ([[String: Any]]) -> Void) {
           return
         }
 
-        let stringFromData = String(data: data, encoding: .utf8)!
-        print("JSON", stringFromData)
+        //let stringFromData = String(data: data, encoding: .utf8)!
+        //print("JSON", stringFromData)
         
         // JSON stuff
         //JSONSerialization.data(withJSONObject: <#T##Any#>, options: <#T##JSONSerialization.WritingOptions#>)
@@ -66,10 +68,17 @@ func getJSON(completionHandler: @escaping ([[String: Any]]) -> Void) {
         // pull request array,
         //user, title, body keys and set up token
         do{
-            try JSONDecoder().decode(PullList.self, from: data)
+            let product = try JSONDecoder().decode(PullList.self, from: data)
+            print("ID")
+            print(product.id)
+            print("body")
+            print(product.body)
         } catch{
             print(error)
         }
+        
+        //JSONEncoder().encode(photos)
+
         //sends models
         //JSONEncoder().encode(photos)
 
@@ -85,14 +94,13 @@ func getJSON(completionHandler: @escaping ([[String: Any]]) -> Void) {
                    print(size["Pull request"])
                }
            }
-        
     
         completionHandler(json)
     }.resume()
 }
 
-let myCompletionHandler: ([[String: Any]]) -> Void = { photos in
-    print(photos)
+let myCompletionHandler: ([[String: Any]]) -> Void = { login in
+    print(login)
   
 }
 
