@@ -20,21 +20,25 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var table: UITableView!
     
     let requestSegueIdentifier = "ShowCellSegue"   //New
+    var newViewBody : String=""
 
     //structs
-    let pullRequests = ["Pull Request 1", "Pull Request 2"]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if  segue.identifier == requestSegueIdentifier,
             let destination = segue.destination as? CellViewController,
             let pullRequestIndex = table.indexPathForSelectedRow?.row
         {
-            destination.selectedPullRequest = pullRequests[pullRequestIndex]
+            for item in pullRequestInfo[pullRequestIndex].values{
+                newViewBody += item
+            }
+            destination.selectedPullRequest = newViewBody
+
         }
     }
     
     func tableView(_ tableView:UITableView, didSelectRowAt indexPath: IndexPath){
-        print(indexPath[1])
+        //print(indexPath[1])
         //let cellViewVC = CellViewController(index: indexPath[1])
         //let cellViewVC = storyboard?.instantiateViewController(identifier: "tableViewVC\(indexPath[1])") as! CellViewController
         //selectedPullRequest = pullRequestsArray[indexPath.row]
@@ -45,13 +49,13 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pullRequests.count
+        return pullRequestInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let row = indexPath.row
-        cell.textLabel?.text = "\(pullRequests[indexPath.row])"
+        cell.textLabel?.text = "\(String(describing: pullRequestInfo[indexPath.row]["title"]))"
         
         return cell
     }

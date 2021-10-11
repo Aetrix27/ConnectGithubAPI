@@ -8,13 +8,15 @@
 
 import Foundation
 
+var pullRequestInfo = [Dictionary<String, String>]()
 
 func getJSON(completionHandler: @escaping ([[String: Any]]) -> Void) {
     class PullList: Codable {
         //var user: Dictionary<String, Dictionary<String, String>>
-        var id: Int?
+        var id: Int
         //var title: String = ""
-        var body: String?
+        var title: String
+        var body: String
     }
     // Enter your response here
     let session = URLSession.shared
@@ -73,6 +75,10 @@ func getJSON(completionHandler: @escaping ([[String: Any]]) -> Void) {
             print(product.id)
             print("body")
             print(product.body)
+            print(product.title)
+        
+            pullRequestInfo.append(["id":String(product.id),"body":product.body, "title":product.title])
+            print(pullRequestInfo[0]["title"])
         } catch{
             print(error)
         }
@@ -91,7 +97,7 @@ func getJSON(completionHandler: @escaping ([[String: Any]]) -> Void) {
         
         for item in json {
                if let size = item["Pull request"] as? [String:Any] {
-                   print(size["Pull request"])
+                print(size["Pull request"]!)
                }
            }
     
@@ -99,8 +105,7 @@ func getJSON(completionHandler: @escaping ([[String: Any]]) -> Void) {
     }.resume()
 }
 
-let myCompletionHandler: ([[String: Any]]) -> Void = { login in
-    print(login)
+let myCompletionHandler: ([[String: Any]]) -> Void = { info in
   
 }
 
